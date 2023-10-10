@@ -268,7 +268,7 @@ mixin TableDaoMixinDelete<DB extends GeneratedDatabase, T extends Table, R>
     on TableDao<DB, T, R> {
   /// Deletes just this entity.
   /// Also see [delete] and [DeleteStatement.delete]
-  Future<int> deleteById(Insertable<R> entity) => delete(table).delete(entity);
+  Future<int> deleteByPrimaryKey(Insertable<R> entity) => delete(table).delete(entity);
 
   Future<int> deleteWhere(
     Insertable<R> entity, {

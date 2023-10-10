@@ -60,7 +60,7 @@ void main() {
     ];
 
     await dao.insertAll(list);
-    await dao.deleteById(TodosTableCompanion(id: Value(1)));
+    await dao.deleteByPrimaryKey(TodosTableCompanion(id: Value(1)));
 
     expect((await dao.getAll()).length, 2);
   });
