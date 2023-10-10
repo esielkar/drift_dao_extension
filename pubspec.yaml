@@ -1,0 +1,16 @@
+name: drift_dao_extension
+description: Dao extension for drift package.
+version: 1.0.0
+repository: https://github.com/esielkar/drift_dao_extension
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  drift: 2.12.1
+
+dev_dependencies:
+  build_runner: 2.4.6
+  drift_dev: ^2.12.1
+  lints: ^2.0.0
+  test: ^1.21.0
