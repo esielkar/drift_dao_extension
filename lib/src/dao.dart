@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:drift/drift.dart';
 
 import 'dao_extension.dart';
@@ -42,16 +44,16 @@ abstract class TableDao<DB extends GeneratedDatabase, T extends Table, R>
 ///
 /// /// {@template drift_dao_extension.dao.dao_view_generic_definitions}
 /// [DB] is the generated dart class which extends [GeneratedDatabase].
-/// [V] is the generated dart class which extends [View] that represents a
-/// view on the generated database.
+/// [V] is the generated dart class that represents a view on the generated
+/// database.
 /// [R] is the associated data class.
 /// {@endtemplate}
-abstract class ViewDao<DB extends GeneratedDatabase, V extends View, R>
+abstract class ViewDao<DB extends GeneratedDatabase, V extends HasResultSet, R>
     extends Dao<DB, V, R> {
   ViewDao(super.attachedDatabase);
 
   /// The [ViewInfo] that this dao uses.
-  /// Note: Any generated [View] implements [ViewInfo].
+  /// Note: Any generated [View] extends [ViewInfo].
   ViewInfo<V, R> get view;
 
   @override
